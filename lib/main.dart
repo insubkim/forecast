@@ -83,30 +83,30 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      onDrawerChanged: (isOpened) => print(isOpened),
-      bottomSheet: Container(
-        height: 100,
-        color: Colors.deepPurple,
-      ),
-      backgroundColor: Colors.yellow,
-      resizeToAvoidBottomInset: false,
-      extendBody: false,
-      extendBodyBehindAppBar: true,
-      drawerScrimColor: Colors.blueAccent,
-      drawerEnableOpenDragGesture: true,
-      drawerEdgeDragWidth: 10,
-      // restorationId: ,
-      persistentFooterAlignment: AlignmentDirectional.bottomCenter,
-      persistentFooterButtons: [
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text('Button'),
-        ),
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text('Button'),
-        ),
-      ],
+      // onDrawerChanged: (isOpened) => print(isOpened),
+      // bottomSheet: Container(
+      //   height: 100,
+      //   color: Colors.deepPurple,
+      // ),
+      // backgroundColor: Colors.yellow,
+      // resizeToAvoidBottomInset: false,
+      // extendBody: false,
+      // extendBodyBehindAppBar: true,
+      // drawerScrimColor: Colors.blueAccent,
+      // drawerEnableOpenDragGesture: true,
+      // drawerEdgeDragWidth: 10,
+      // // restorationId: ,
+      // persistentFooterAlignment: AlignmentDirectional.bottomCenter,
+      // persistentFooterButtons: [
+      //   ElevatedButton(
+      //     onPressed: () {},
+      //     child: const Text('Button'),
+      //   ),
+      //   ElevatedButton(
+      //     onPressed: () {},
+      //     child: const Text('Button'),
+      //   ),
+      // ],
       // bottomNavigationBar: BottomNavigationBar(
       //   items: const [
       //     BottomNavigationBarItem(
@@ -132,75 +132,108 @@ class _MyHomePageState extends State<MyHomePage> {
       //   // the App.build method, and use it to set our appbar title.
       //   title: Text(widget.title),
       // ),
-      appBar: PreferredSize(
-        preferredSize: MediaQuery.of(context).size * 0.3,
-        child: AppBar(
-          backgroundColor: Colors.deepPurple,
-          title: const Text('AppBar'),
+      appBar: AppBar(
+        leading: const Icon(Icons.abc),
+        title: const Text('AppBar'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.access_time_filled),
+          ),
+        ],
+        flexibleSpace: const Text(
+          'FLEXIBLE SPACE',
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.blue,
+          ),
+        ),
+        primary: false,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(100),
+          child: Container(
+            color: Colors.red,
+            height: 100,
+          ),
         ),
       ),
-      drawer: Drawer(
-        width: 100,
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.deepPurple,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // TRY THIS: Try changing the color here to a specific color (to
-                // Colors.amber, perhaps?) and trigger a hot reload to see the
-                // ListTile change color while the other colors stay the same.
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // TRY THIS: Try changing the color here to a specific color (to
-                // Colors.amber, perhaps?) and trigger a hot reload to see the
-                // ListTile change color while the other colors stay the same.
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
+
+      // appBar: PreferredSize(
+      //   preferredSize: MediaQuery.of(context).size * 0.3,
+      //   child: AppBar(
+      //     backgroundColor: Colors.deepPurple,
+      //     title: const Text('AppBar'),
+      //   ),
+      // ),
+      body: const Text('data', style: TextStyle(fontSize: 800)),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
-      endDrawer: Drawer(
-        width: 100,
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.deepPurple,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // TRY THIS: Try changing the color here to a specific color (to
-                // Colors.amber, perhaps?) and trigger a hot reload to see the
-                // ListTile change color while the other colors stay the same.
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // TRY THIS: Try changing the color here to a specific color (to
-                // Colors.amber, perhaps?) and trigger a hot reload to see the
-                // ListTile change color while the other colors stay the same.
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      //
+      // drawer: Drawer(
+      //   width: 100,
+      //   child: ListView(
+      //     children: [
+      //       const DrawerHeader(
+      //         decoration: BoxDecoration(
+      //           color: Colors.deepPurple,
+      //         ),
+      //         child: Text('Drawer Header'),
+      //       ),
+      //       ListTile(
+      //         title: const Text('Item 1'),
+      //         onTap: () {
+      //           // TRY THIS: Try changing the color here to a specific color (to
+      //           // Colors.amber, perhaps?) and trigger a hot reload to see the
+      //           // ListTile change color while the other colors stay the same.
+      //           Navigator.pop(context);
+      //         },
+      //       ),
+      //       ListTile(
+      //         title: const Text('Item 2'),
+      //         onTap: () {
+      //           // TRY THIS: Try changing the color here to a specific color (to
+      //           // Colors.amber, perhaps?) and trigger a hot reload to see the
+      //           // ListTile change color while the other colors stay the same.
+      //           Navigator.pop(context);
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      // endDrawer: Drawer(
+      //   width: 100,
+      //   child: ListView(
+      //     children: [
+      //       const DrawerHeader(
+      //         decoration: BoxDecoration(
+      //           color: Colors.deepPurple,
+      //         ),
+      //         child: Text('Drawer Header'),
+      //       ),
+      //       ListTile(
+      //         title: const Text('Item 1'),
+      //         onTap: () {
+      //           // TRY THIS: Try changing the color here to a specific color (to
+      //           // Colors.amber, perhaps?) and trigger a hot reload to see the
+      //           // ListTile change color while the other colors stay the same.
+      //           Navigator.pop(context);
+      //         },
+      //       ),
+      //       ListTile(
+      //         title: const Text('Item 2'),
+      //         onTap: () {
+      //           // TRY THIS: Try changing the color here to a specific color (to
+      //           // Colors.amber, perhaps?) and trigger a hot reload to see the
+      //           // ListTile change color while the other colors stay the same.
+      //           Navigator.pop(context);
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
       // body: Center(
       //   // Center is a layout widget. It takes a single child and positions it
@@ -250,12 +283,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
-      body: const Text('data', style: TextStyle(fontSize: 800)),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
