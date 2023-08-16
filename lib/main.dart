@@ -75,16 +75,40 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: [
-          Image.asset("/Users/inskim/inskim/flutter/forecast/pic.jpeg",
-              width: 100),
-          Text(
+          SizedBox(
+            width: 300,
+            height: 300,
+            child: Image.asset(
+              "/Users/inskim/inskim/flutter/forecast/pic.jpeg",
+            ),
+          ),
+          const Text(
             'Tab Controller 2',
             style: TextStyle(fontSize: 100, color: Colors.red),
           ),
-          Text(
-            'Tab Controller 3',
-            style: TextStyle(fontSize: 100, color: Colors.lightBlue),
+          Table(
+            columnWidths: const {
+              0: FixedColumnWidth(100),
+              1: FixedColumnWidth(20),
+            },
+            children: 
+              List.generate(7, (index) => {
+                return const TableRow(children: [TableCell(child: Text('1')), TableCell(child: Text('2'))]);
+              });
+            ,
           ),
+          // ConstrainedBox(
+          //   constraints: const BoxConstraints(maxWidth: 10, maxHeight: 10),
+          //   child: const Text(
+          //     'Constraind Box',
+          //     style: TextStyle(fontSize: 100),
+          //   ),
+          // ),
+
+          // const Text(
+          //   'Tab Controller 3',
+          //   style: TextStyle(fontSize: 100, color: Colors.lightBlue),
+          // ),
         ],
       ),
     );
