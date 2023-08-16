@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        //fontFamily: 'Roboto',
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -36,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late final TabController _tabController;
+  String msg = 'hi';
 
   @override
   void initState() {
@@ -75,40 +77,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: [
-          SizedBox(
-            width: 300,
-            height: 300,
-            child: Image.asset(
-              "/Users/inskim/inskim/flutter/forecast/pic.jpeg",
-            ),
+          const Text(
+            'Tab Controller 1',
+            style: TextStyle(fontSize: 100, color: Colors.amber),
           ),
           const Text(
             'Tab Controller 2',
             style: TextStyle(fontSize: 100, color: Colors.red),
           ),
-          Table(
-            columnWidths: const {
-              0: FixedColumnWidth(100),
-              1: FixedColumnWidth(20),
+          GestureDetector(
+            onTap: () {
+              msg += '1';
+              setState(() {});
             },
-            children: 
-              List.generate(7, (index) => {
-                return const TableRow(children: [TableCell(child: Text('1')), TableCell(child: Text('2'))]);
-              });
-            ,
+            child: Text(msg),
           ),
-          // ConstrainedBox(
-          //   constraints: const BoxConstraints(maxWidth: 10, maxHeight: 10),
-          //   child: const Text(
-          //     'Constraind Box',
-          //     style: TextStyle(fontSize: 100),
-          //   ),
-          // ),
-
-          // const Text(
-          //   'Tab Controller 3',
-          //   style: TextStyle(fontSize: 100, color: Colors.lightBlue),
-          // ),
         ],
       ),
     );
