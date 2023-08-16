@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
-        //fontFamily: 'Roboto',
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -75,11 +74,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           )),
       body: TabBarView(
         controller: _tabController,
-        children: const [
-          Text(
-            'Tab Controller 1',
-            style: TextStyle(fontSize: 100, color: Colors.amber),
-          ),
+        children: [
+          Image.asset("/Users/inskim/inskim/flutter/forecast/pic.jpeg",
+              width: 100),
           Text(
             'Tab Controller 2',
             style: TextStyle(fontSize: 100, color: Colors.red),
