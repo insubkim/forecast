@@ -77,10 +77,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: [
-          const Text(
-            'Tab Controller 1',
-            style: TextStyle(fontSize: 100, color: Colors.amber),
-          ),
+          const DismissibleEx(),
           const Text(
             'Tab Controller 2',
             style: TextStyle(fontSize: 100, color: Colors.red),
@@ -94,6 +91,24 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
+    );
+  }
+}
+
+class DismissibleEx extends StatefulWidget {
+  const DismissibleEx({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _DismissibleExState();
+}
+
+class _DismissibleExState extends State<DismissibleEx> {
+  List<int> arr = List.generate(4, (index) => index * 2);
+  @override
+  Widget build(Object context) {
+    return const Dismissible(
+      key: ValueKey<int>(1),
+      child: Text("dismiss!"),
     );
   }
 }
